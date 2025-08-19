@@ -1,18 +1,18 @@
 <script setup>
 const partners = [
-  { src: "/src/assets/img/partners/allinq.svg", alt: "allinq" },
-  { src: "/src/assets/img/partners/KPN.svg", alt: "KPN" },
-  { src: "/src/assets/img/partners/paul.svg", alt: "paul" },
-  { src: "/src/assets/img/partners/postnl.svg", alt: "postnl" },
-  { src: "/src/assets/img/partners/ceva.svg", alt: "ceva" },
-  { src: "/src/assets/img/partners/van-de-ende.svg", alt: "van-de-ende" },
-  { src: "/src/assets/img/partners/drake.svg", alt: "drake" },
-  { src: "/src/assets/img/partners/elslogistics.svg", alt: "elslogistics" },
-  { src: "/src/assets/img/partners/flextrans.svg", alt: "flextrans" },
-  { src: "/src/assets/img/partners/groven.svg", alt: "groven" },
-  { src: "/src/assets/img/partners/paragon.svg", alt: "paragon" },
-  { src: "/src/assets/img/partners/svz.svg", alt: "svz" },
-  { src: "/src/assets/img/partners/master-protection.svg", alt: "master-protection" }
+  { src: "/public/partners/allinq.svg", alt: "allinq" },
+  { src: "/public/partners/KPN.svg", alt: "KPN" },
+  { src: "/public/partners/paul.svg", alt: "paul" },
+  { src: "/public/partners/postnl.svg", alt: "postnl" },
+  { src: "/public/partners/ceva.svg", alt: "ceva" },
+  { src: "/public/partners/van-de-ende.svg", alt: "van-de-ende" },
+  { src: "/public/partners/drake.svg", alt: "drake" },
+  { src: "/public/partners/elslogistics.svg", alt: "elslogistics" },
+  { src: "/public/partners/flextrans.svg", alt: "flextrans" },
+  { src: "/public/partners/groven.svg", alt: "groven" },
+  { src: "/public/partners/paragon.svg", alt: "paragon" },
+  { src: "/public/partners/svz.svg", alt: "svz" },
+  { src: "/public/partners/master-protection.svg", alt: "master-protection" }
 ];
 </script>
 
