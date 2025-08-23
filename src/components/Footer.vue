@@ -1,13 +1,35 @@
+<script setup>
+import logo from "@/assets/img/middendorp_logo_wit.svg"
+</script>
+
 <template>
   <footer id="footer" class="bg-middendorp_darkgreen text-white px-8 py-12">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
       <!-- Bedrijfsinfo -->
       <div>
-        <h2 class="text-xl font-bold mb-2">MIDDENDORP Logistiek</h2>
-        <p>Veenpoldersweg 32<br />2266 GA Leidschendam</p>
+        <!-- Logo -->
+        <img
+            :src="logo"
+            alt="Middendorp Logistiek"
+            class="w-24 sm:w-52 md:w-56 mb-6"
+        />
+        <p>
+          Veenpoldersweg 32<br />
+          2266 GA Leidschendam
+        </p>
         <p class="mt-4">
-          Telefoon: <a href="tel:0701234567" class=" text-middendorp_white underline">070-1234567</a><br />
-          E-mail: <a href="mailto:info@middendorplogistiek.nl" class=" text-middendorp_white underline">info@middendorplogistiek.nl</a>
+          Telefoon:
+          <a
+              href="tel:0701234567"
+              class="text-middendorp_white underline"
+          >070-1234567</a
+          ><br />
+          E-mail:
+          <a
+              href="mailto:info@middendorplogistiek.nl"
+              class="text-middendorp_white underline"
+          >info@middendorplogistiek.nl</a
+          >
         </p>
       </div>
 
@@ -27,6 +49,7 @@
       </div>
     </div>
 
+    <!-- Copyright -->
     <div class="mt-8 text-center text-sm opacity-80">
       &copy; 2025 MIDDENDORP Logistiek. Alle rechten voorbehouden.
     </div>

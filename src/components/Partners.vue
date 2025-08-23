@@ -1,24 +1,24 @@
 <script setup>
 const partners = [
-  { src: "/public/allinq.svg", alt: "allinq" },
-  { src: "/public/KPN.svg", alt: "KPN" },
-  { src: "/public/paul.svg", alt: "paul" },
-  { src: "/public/postnl.svg", alt: "postnl" },
-  { src: "/public/ceva.svg", alt: "ceva" },
-  { src: "/public/van-de-ende.svg", alt: "van-de-ende" },
-  { src: "/public/drake.svg", alt: "drake" },
-  { src: "/public/elslogistics.svg", alt: "elslogistics" },
-  { src: "/public/flextrans.svg", alt: "flextrans" },
-  { src: "/public/groven.svg", alt: "groven" },
-  { src: "/public/paragon.svg", alt: "paragon" },
-  { src: "/public/svz.svg", alt: "svz" },
-  { src: "/public/master-protection.svg", alt: "master-protection" }
+  { src: "/src/assets/img/partners/allinq.svg", alt: "allinq" },
+  { src: "/src/assets/img/partners/KPN.svg", alt: "KPN" },
+  { src: "/src/assets/img/partners/paul.svg", alt: "paul" },
+  { src: "/src/assets/img/partners/postnl.svg", alt: "postnl" },
+  { src: "/src/assets/img/partners/ceva.svg", alt: "ceva" },
+  { src: "/src/assets/img/partners/van-de-ende.svg", alt: "van-de-ende" },
+  { src: "/src/assets/img/partners/drake.svg", alt: "drake" },
+  { src: "/src/assets/img/partners/elslogistics.svg", alt: "elslogistics" },
+  { src: "/src/assets/img/partners/flextrans.svg", alt: "flextrans" },
+  { src: "/src/assets/img/partners/groven.svg", alt: "groven" },
+  { src: "/src/assets/img/partners/paragon.svg", alt: "paragon" },
+  { src: "/src/assets/img/partners/svz.svg", alt: "svz" },
+  { src: "/src/assets/img/partners/master-protection.svg", alt: "master-protection" }
 ];
 </script>
 
 <template>
   <div class="relative z-0  max-w-[1600px] mx-auto lg:flex-row justify-between items-center px-10 py-20">
-    <h1 class="text-middendorp_darkgreen font-bold text-5xl mb-32">Klanten en partners</h1>
+    <h1 class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-32">Klanten en partners</h1>
   <div class="bg-white py-6 overflow-hidden">
     <div class="scroll-track">
       <!-- Rij 1 -->
