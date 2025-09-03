@@ -14,7 +14,7 @@ const isOpen = ref(false);
       <img
           :src="logoUrl"
           alt="Middendorp Logistiek"
-          class="w-24 sm:w-32 md:w-36"
+          class="w-32 sm:w-32 md:w-36"
       />
 
       <!-- Hamburger button (alleen mobiel) -->

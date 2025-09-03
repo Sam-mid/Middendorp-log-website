@@ -11,7 +11,7 @@ import logo from "@/assets/img/middendorp_logo_wit.svg"
         <img
             :src="logo"
             alt="Middendorp Logistiek"
-            class="w-24 sm:w-52 md:w-56 mb-6"
+            class="w-32 sm:w-52 md:w-56 mb-6"
         />
         <p>
           Veenpoldersweg 32<br />
