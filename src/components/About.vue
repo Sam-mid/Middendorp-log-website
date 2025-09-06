@@ -20,7 +20,7 @@ import Carousel from "./Carousel.vue"
       </div>
 
       <!-- Carousel i.p.v. losse afbeeldingen -->
-      <div class="relative w-full lg:w-[600px] h-[400px] mt-12 lg:mt-0 z-10">
+      <div class="relative w-full lg:w-[600px] mt-12 lg:mt-0 z-10">
         <Carousel />
       </div>
     </div>

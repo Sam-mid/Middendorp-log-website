@@ -1,5 +1,5 @@
 <script setup>
-// Importeer de afbeeldingen eerst
+// Importeer de afbeeldingen
 import allinq from "@/assets/img/partners/allinq.svg";
 import kpn from "@/assets/img/partners/KPN.svg";
 import paul from "@/assets/img/partners/paul.svg";
@@ -14,44 +14,50 @@ import paragon from "@/assets/img/partners/paragon.svg";
 import svz from "@/assets/img/partners/svz.svg";
 import masterProtection from "@/assets/img/partners/master-protection.svg";
 
-// Gebruik de geïmporteerde afbeeldingen
+// Array van partners
 const partners = [
-  { src: allinq, alt: "allinq" },
-  { src: kpn, alt: "KPN" },
-  { src: paul, alt: "paul" },
-  { src: postnl, alt: "postnl" },
-  { src: ceva, alt: "ceva" },
-  { src: vandeende, alt: "van-de-ende" },
-  { src: drake, alt: "drake" },
-  { src: elslogistics, alt: "elslogistics" },
-  { src: flextrans, alt: "flextrans" },
-  { src: groven, alt: "groven" },
-  { src: paragon, alt: "paragon" },
-  { src: svz, alt: "svz" },
-  { src: masterProtection, alt: "master-protection" }
+  allinq, kpn, paul, postnl, ceva, vandeende,
+  drake, elslogistics, flextrans, groven, paragon, svz, masterProtection
 ];
+
+// Splits partners in twee rijen
+const row1 = partners.filter((_, i) => i % 2 === 0);
+const row2 = partners.filter((_, i) => i % 2 !== 0);
 </script>
 
 <template>
-  <div class="relative z-0 max-w-[1600px] mx-auto lg:flex-row justify-between items-center px-10 py-20">
-    <h1 class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-32">
+  <div class="relative z-0 max-w-[1600px] mx-auto lg:flex-row justify-between items-center px-4 sm:px-10 py-20">
+    <h1 class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-16 sm:mb-32 text-center sm:text-left">
       Klanten en partners
     </h1>
-    <div class="bg-white py-6 overflow-hidden">
+    <div class="bg-white py-6 overflow-hidden space-y-8 sm:space-y-12">
+
+      <!-- Eerste scroll-rij -->
       <div class="scroll-track">
-        <!-- Rij 1 -->
         <div class="scroll-content">
-          <div v-for="(partner, index) in partners" :key="'first-' + index" class="logo">
-            <img :src="partner.src" :alt="partner.alt" class="h-16 w-auto object-contain" />
+          <div v-for="(partner, index) in row1" :key="'row1a-' + index" class="logo">
+            <img :src="partner" alt="partner logo" class="h-10 sm:h-16 w-auto object-contain" />
           </div>
-        </div>
-        <!-- Rij 2 (duplicaat) -->
-        <div class="scroll-content">
-          <div v-for="(partner, index) in partners" :key="'second-' + index" class="logo">
-            <img :src="partner.src" :alt="partner.alt" class="h-16 w-auto object-contain" />
+          <!-- Duplicaat voor oneindig scrollen -->
+          <div v-for="(partner, index) in row1" :key="'row1b-' + index" class="logo">
+            <img :src="partner" alt="partner logo" class="h-10 sm:h-16 w-auto object-contain" />
           </div>
         </div>
       </div>
+
+      <!-- Tweede scroll-rij (tegen richting in) -->
+      <div class="scroll-track reverse">
+        <div class="scroll-content">
+          <div v-for="(partner, index) in row2" :key="'row2a-' + index" class="logo">
+            <img :src="partner" alt="partner logo" class="h-10 sm:h-16 w-auto object-contain" />
+          </div>
+          <!-- Duplicaat voor oneindig scrollen -->
+          <div v-for="(partner, index) in row2" :key="'row2b-' + index" class="logo">
+            <img :src="partner" alt="partner logo" class="h-10 sm:h-16 w-auto object-contain" />
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
@@ -60,7 +66,11 @@ const partners = [
 .scroll-track {
   display: flex;
   width: max-content;
-  animation: scroll 30s linear infinite;
+  animation: scroll 60s linear infinite;
+}
+
+.scroll-track.reverse {
+  animation-direction: reverse;
 }
 
 .scroll-content {
@@ -69,7 +79,13 @@ const partners = [
 
 .logo {
   flex: 0 0 auto;
-  padding: 0 2rem; /* ruimte tussen logo's */
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .logo {
+    padding: 0 2rem;
+  }
 }
 
 /* Scroll animatie */
@@ -78,7 +94,9 @@ const partners = [
     transform: translateX(0);
   }
   to {
-    transform: translateX(-20%);
+    transform: translateX(-50%); /* 50% omdat we de rij dupliceren voor oneindig scrollen */
   }
 }
 </style>
+
+
