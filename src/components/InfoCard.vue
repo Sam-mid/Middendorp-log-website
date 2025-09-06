@@ -1,23 +1,19 @@
 <script setup>
-import foto1 from "@/assets/img/cards/foto1.jpeg";
-import foto2 from "@/assets/img/cards/foto2.jpeg";
-import foto3 from "@/assets/img/cards/foto3.jpeg";
-
 const cards = [
   {
     title: "Vrachtvervoer",
     text: "Voor het vervoer van pallets, rolcontainers en meer kunt u rekenen op ons. Wij beschikken over een veelzijdig wagenpark met bakwagens tot 18 ton, geschikt voor uiteenlopende vrachten. Of het nu gaat om dagelijkse distributie of speciaal transport: wij vervoeren uw lading met zorg en precisie. Alles wat in de wagen past, brengen wij veilig en op tijd naar de juiste bestemming.",
-    img: foto1,
+    img: "src/assets/img/cards/foto1.jpeg",
   },
   {
     title: "Koeriers diensten",
     text: "Snel en betrouwbaar van A naar B of het nu om een enveloppe gaat of een pallet. Onze koeriers rijden door heel Nederland en staan klaar voor spoedritten en geplande leveringen. Snel ter plaatsen en met zorg geleverd.",
-    img: foto2,
+    img: "src/assets/img/cards/foto2.jpeg",
   },
   {
     title: "Speciaal transport",
     text: "Ook voor uitzonderlijk transport bent u bij ons aan het juiste adres. Of het nu gaat om grote objecten, leveringen met een verhuislift, het takelen van goederen of het omhoog brengen met een traploper – wij zorgen voor een passende oplossing.",
-    img: foto3,
+    img: "src/assets/img/cards/foto3.jpeg",
   },
 ];
 </script>
@@ -60,4 +56,5 @@ const cards = [
 </template>
 
 <style scoped></style>
+
 
