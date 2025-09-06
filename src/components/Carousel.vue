@@ -1,41 +1,43 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue"
 
-// Afbeeldingen → zet ze in `public/carousel/` of pas aan naar jouw pad
-const images = [
-  "/src/assets/img/carousel/foto1.jpg",
-  "/src/assets/img/carousel/foto2.jpg",
-  "/src/assets/img/carousel/foto3.jpg",
-]
+// Importeer de afbeeldingen
+import foto1 from "@/assets/img/carousel/foto1.jpg";
+import foto2 from "@/assets/img/carousel/foto2.jpg";
+import foto3 from "@/assets/img/carousel/foto3.jpg";
 
-const currentIndex = ref(0)
-const total = images.length
+// Zet de geïmporteerde afbeeldingen in de array
+const images = [foto1, foto2, foto3];
+
+const currentIndex = ref(0);
+const total = images.length;
 
 // Automatisch volgende slide
-let intervalId
+let intervalId;
 const next = () => {
-  currentIndex.value = (currentIndex.value + 1) % total
-}
+  currentIndex.value = (currentIndex.value + 1) % total;
+};
 
 onMounted(() => {
-  intervalId = setInterval(next, 4000) // elke 4 seconden
-})
+  intervalId = setInterval(next, 4000); // elke 4 seconden
+});
 
 onUnmounted(() => {
-  clearInterval(intervalId)
-})
+  clearInterval(intervalId);
+});
 
-// Swipe support (optioneel voor mobiel)
-let startX = 0
+// Swipe support (mobiel)
+let startX = 0;
 const onTouchStart = (e) => {
-  startX = e.touches[0].clientX
-}
+  startX = e.touches[0].clientX;
+};
 const onTouchEnd = (e) => {
-  const endX = e.changedTouches[0].clientX
-  if (startX - endX > 50) next()
-  if (endX - startX > 50)
-    currentIndex.value = (currentIndex.value - 1 + total) % total
-}
+  const endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) next();
+  if (endX - startX > 50) {
+    currentIndex.value = (currentIndex.value - 1 + total) % total;
+  }
+};
 </script>
 
 <template>

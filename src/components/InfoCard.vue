@@ -1,7 +1,7 @@
 <script setup>
-import foto1 from "@/assets/img/foto1.jpeg";
-import foto2 from "@/assets/img/foto2.jpeg";
-import foto3 from "@/assets/img/foto3.jpeg";
+import foto1 from "@/assets/img/cards/foto1.jpeg";
+import foto2 from "@/assets/img/cards/foto2.jpeg";
+import foto3 from "@/assets/img/cards/foto3.jpeg";
 
 const cards = [
   {
