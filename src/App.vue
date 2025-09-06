@@ -4,20 +4,25 @@ import About from "./components/About.vue";
 import Footer from "./components/Footer.vue";
 import Partners from "./components/Partners.vue";
 import InfoCard from "./components/InfoCard.vue";
+
+const scrollTo = (id) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
 </script>
 
 <template>
   <div class="min-h-screen flex flex-col">
-    <Header />
+    <Header @scroll-to="scrollTo" />
+
     <div class="flex-grow">
-      <About />
-      <InfoCard/>
-      <Partners/>
+      <section id="about"><About /></section>
+      <section id="info"><InfoCard /></section>
+      <section id="partners"><Partners /></section>
     </div>
-    <Footer/>
+
+    <section id="footer"><Footer /></section>
   </div>
 </template>
-
 
 <style>
 html, body {
@@ -25,5 +30,7 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: 'Noto Sans', sans-serif;
+  scroll-behavior: smooth;
 }
 </style>
+
