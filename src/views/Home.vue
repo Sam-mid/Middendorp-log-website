@@ -5,23 +5,18 @@ import Footer from "../components/Footer.vue";
 import Partners from "../components/Partners.vue";
 import InfoCard from "../components/InfoCard.vue";
 
+import headerBackground from "@/assets/img/header-background.jpeg";
+
 const scrollTo = (id) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 };
-
-import { ref } from "vue";
-import logoUrl from "/src/assets/img/middendorp_logo.svg";
-
-
-const isOpen = ref(false);
-const emit = defineEmits(["scroll-to"]);
 </script>
 
 <template>
   <div class="min-h-screen flex flex-col">
     <Header
         title="Transport en koeriers diensten"
-        background="/src/assets/img/header-background.jpeg"
+        :background="headerBackground"
         @scroll-to="scrollTo"
         :showContactButton="true"
     />
