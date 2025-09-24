@@ -1,24 +1,26 @@
 <script>
-import {defineComponent} from "vue";
-import Footer from "@/components/Footer.vue";
+import { defineComponent } from "vue";
 import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
 import Button from "@/components/Button.vue";
+
 import logoUrl from "@/assets/img/middendorp_logo.svg";
+import vacancyHeader from "@/assets/img/vacancy_header.jpeg";
 
 export default defineComponent({
-  computed: {
-    logoUrl() {
-      return logoUrl
-    }
-  },
-  components: {Button, Header, Footer,}
-})
+  components: { Button, Header, Footer },
+  setup() {
+    return {
+      logoUrl,
+      vacancyHeader
+    };
+  }
+});
 </script>
-
 <template>
   <Header
       title="Vacatures"
-      background="/src/assets/img/vacancy_header.jpeg"
+      :background="vacancyHeader"
   />
 
   <div class="bg-middendorp_white">
