@@ -23,7 +23,6 @@ export default defineComponent({
 
   <div class="bg-middendorp_white">
     <div class="relative z-0 flex flex-col max-w-[1600px] mx-auto lg:flex-col justify-between items-start px-10 py-10 gap-8">
-
       <div class="flex-1 z-10">
         <h1 class="text-middendorp_darkgreen font-bold  text-3xl lg:text-4xl mb-4">Kom jij ons team versterken?</h1>
         <br />
@@ -52,13 +51,15 @@ export default defineComponent({
         </p>
       </div>
     </div>
+  </div>
 
-    <div class="relative z-0 flex flex-col max-w-[1600px] mx-auto lg:flex-col justify-between items-start px-10 pb-20 gap-8">
+  <div class="">
+    <div class="relative z-0 flex flex-col max-w-[1600px] mx-auto lg:flex-col justify-between items-start px-10 py-10 gap-8">
       <div class="flex-1 z-10">
         <h1 class="text-middendorp_darkgreen font-bold  text-3xl lg:text-4xl mb-4">Wat vragen wij van jou?</h1>
         <br />
         <p class="text-lg leading-relaxed">
-         <li>Rijbewijs C en Code 95.</li>
+          <li>Rijbewijs C en Code 95.</li>
           <li>Enthousiasme voor hard werken en fysiek sjouwen.</li>
           <li>Flexibele instelling en fulltime beschikbaarheid.</li>
           <li>Oog voor detail en professionaliteit richting klanten.</li>
@@ -78,9 +79,10 @@ export default defineComponent({
         </p>
       </div>
     </div>
-
-    <section id="footer"><Footer /></section>
   </div>
+
+  <section id="footer"><Footer /></section>
+
 </template>
 
 <style scoped>

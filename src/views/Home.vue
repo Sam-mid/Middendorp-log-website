@@ -23,6 +23,7 @@ const emit = defineEmits(["scroll-to"]);
         title="Transport en koeriers diensten"
         background="/src/assets/img/header-background.jpeg"
         @scroll-to="scrollTo"
+        :showContactButton="true"
     />
 
     <div class="flex-grow">

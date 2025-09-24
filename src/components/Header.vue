@@ -6,7 +6,8 @@ import { useRoute, useRouter } from "vue-router";
 
 const props = defineProps({
   title: { type: String, required: true },
-  background: { type: String, required: true }
+  background: { type: String, required: true },
+  showContactButton: { type: Boolean, default: false }
 });
 
 const isOpen = ref(false);
@@ -31,12 +32,15 @@ const goToSection = (id) => {
   <header>
     <!-- Navbar -->
     <div class="flex justify-between items-center bg-gray-100 border-b border-gray-300 px-4 py-3">
-      <!-- Logo -->
-      <img
-          :src="logoUrl"
-          alt="Middendorp Logistiek"
-          class="w-32 sm:w-32 md:w-36"
-      />
+
+      <RouterLink to="/">
+        <img
+            :src="logoUrl"
+            alt="Middendorp Logistiek"
+            class="w-32 sm:w-32 md:w-36 cursor-pointer"
+        />
+      </RouterLink>
+
 
       <!-- Hamburger button (mobiel) -->
       <button
@@ -73,7 +77,7 @@ const goToSection = (id) => {
         <button @click="goToSection('about')" class="text-middendorp_black hover:text-middendorp_green">Over ons</button>
         <button @click="goToSection('info')" class="text-middendorp_black hover:text-middendorp_green">Diensten</button>
         <button @click="goToSection('partners')" class="text-middendorp_black hover:text-middendorp_green">Partners</button>
-        <RouterLink to="/vacatures" class="text-middendorp_black hover:text-middendorp_green">Vacatures</RouterLink>
+        <RouterLink to="/vacatures" class="text-middendorp_black hover:text-middendorp_green text-center">Vacatures</RouterLink>
         <button @click="goToSection('footer')" class="text-middendorp_black hover:text-middendorp_green">Contact</button>
 
         <!-- Telefoonnummer als klikbare link -->
@@ -106,10 +110,11 @@ const goToSection = (id) => {
           {{ title }}
         </h1>
         <Button
+            v-if="showContactButton"
             label="Neem contact op"
             variant="primary"
             size="lg"
-            @click="goToSection('footer')"
+            @click="emit('scroll-to', 'footer')"
         />
       </div>
     </div>

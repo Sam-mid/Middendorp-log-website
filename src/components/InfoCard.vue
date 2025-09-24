@@ -44,7 +44,7 @@ const cards = [
                 :alt="card.title"
                 class="h-48 w-full object-cover"
             />
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-6 flex flex-col flex-grow bg-middendorp_white">
               <h3
                   class="text-xl font-bold mb-3 text-middendorp_darkgreen"
               >
