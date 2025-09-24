@@ -40,7 +40,7 @@ export default defineComponent({
         <p class="text-lg leading-relaxed">
           Middendorp Logistiek is gevestigd in Stompwijk en sinds 1972 een vertrouwde naam in de transportsector.
           Als klein familiebedrijf met een groot hart werken we dagelijks aan uitdagende opdrachten voor klanten zoals Ceva Logistics en KPN.
-          Ons team van zes ervaren chauffeurs zorgt voor een collegiale sfeer waarin iedereen telt.
+          Ons team van ervaren chauffeurs zorgt voor een collegiale sfeer waarin iedereen telt.
         </p>
       </div>
 
