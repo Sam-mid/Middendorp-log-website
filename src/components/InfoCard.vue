@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 import foto1 from "@/assets/img/cards/foto1.jpeg";
 import foto2 from "@/assets/img/cards/foto2.jpeg";
 import foto3 from "@/assets/img/cards/foto3.jpeg";
@@ -37,20 +38,25 @@ const cards = [
           <div
               v-for="(card, index) in cards"
               :key="index"
-              class="bg-white shadow-md overflow-hidden flex flex-col"
+              class="bg-white shadow-lg hover:shadow-2xl overflow-hidden flex flex-col transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 animate-fade-in"
+              :style="{ animationDelay: `${index * 100}ms` }"
           >
-            <img
-                :src="card.img"
-                :alt="card.title"
-                class="h-48 w-full object-cover"
-            />
+            <div class="relative h-48 w-full overflow-hidden flex items-center justify-center">
+              <img
+                  :src="card.img"
+                  :alt="card.title"
+                  class="h-full w-full object-cover hover:opacity-100 transition-opacity duration-300"
+              />
+              <div class="absolute inset-0 to-transparent"></div>
+              <span class="absolute text-5xl drop-shadow-lg">{{ card.icon }}</span>
+            </div>
             <div class="p-6 flex flex-col flex-grow bg-middendorp_white">
               <h3
-                  class="text-xl font-bold mb-3 text-middendorp_darkgreen"
+                  class="text-xl font-bold mb-3 text-middendorp_darkgreen tracking-wide"
               >
                 {{ card.title }}
               </h3>
-              <p class="text-gray-600 flex-grow">{{ card.text }}</p>
+              <p class="text-gray-600 flex-grow leading-relaxed text-sm">{{ card.text }}</p>
             </div>
           </div>
         </div>
@@ -59,7 +65,23 @@ const cards = [
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+  opacity: 0;
+}
+</style>
 
 
 
