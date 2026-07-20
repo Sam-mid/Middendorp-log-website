@@ -27,9 +27,10 @@ const row2 = partners.filter((_, i) => i % 2 !== 0);
 
 <template>
   <div class="relative z-0 max-w-[1600px] mx-auto lg:flex-row justify-between items-center px-4 sm:px-8 lg:px-16 py-20">
-    <h1 class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-16 sm:mb-32 text-center sm:text-left">
+    <h1 class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-8 sm:mb-16 text-center sm:text-left">
       Klanten en partners
     </h1>
+
     <div class=" py-6 overflow-hidden space-y-8 sm:space-y-12">
 
       <!-- Eerste scroll-rij -->

@@ -4,9 +4,7 @@ import Carousel from "./Carousel.vue"
 
 <template>
   <div class="bg-middendorp_white relative overflow-hidden">
-    <!-- Decorative shape -->
-    <div class="absolute -top-20 -right-20 w-64 h-64 bg-middendorp_green rounded-full opacity-5"></div>
-    
+
     <div class="relative z-0 flex flex-col max-w-[1600px] mx-auto lg:flex-row justify-between items-start px-4 sm:px-8 lg:px-16 py-20 gap-12">
 
       <!-- Tekstblok -->
