@@ -12,7 +12,7 @@ const emit = defineEmits(["scroll-to"]);
 </script>
 
 <template>
-  <div class="hero relative w-full h-[40vh] sm:h-[60vh] md:h-[70vh] overflow-hidden">
+  <div class="hero relative w-full overflow-hidden">
     <img
         :src="background"
         alt="header"
@@ -70,21 +70,40 @@ const emit = defineEmits(["scroll-to"]);
 </template>
 
 <style scoped>
-/* Hoogte van de inham; HeroNotch erft deze waarde.
-   Op mobiel 0, want daar staat de inham uit. */
+/* Hoogte van de hero en van de inham. --notch-height wordt geërfd door
+   HeroNotch en door de titel en de knop hieronder.
+   Op mobiel is de inham 0, want daar staat hij uit. */
 .hero {
   --notch-height: 0px;
+  height: 40vh;
 }
 
 @media (min-width: 640px) {
   .hero {
     --notch-height: 110px;
+    height: 60vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    height: 70vh;
   }
 }
 
 @media (min-width: 1024px) {
   .hero {
     --notch-height: 145px;
+  }
+}
+
+/* Op grote schermen oogt 70vh te fors. Iets platter, met een plafond zodat
+   hij op hoge schermen niet meegroeit en een bodem voor lage vensters. */
+@media (min-width: 1080px) {
+  .hero {
+    height: 55vh;
+    max-height: 620px;
+    min-height: 400px;
   }
 }
 
