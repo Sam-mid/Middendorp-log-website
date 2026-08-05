@@ -5,7 +5,7 @@ import Footer from "../components/Footer.vue";
 import Partners from "../components/Partners.vue";
 import InfoCard from "../components/InfoCard.vue";
 
-import headerBackground from "@/assets/img/header-background.jpeg";
+import headerBackground from "@/assets/img/header-background.webp";
 
 const scrollTo = (id) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -15,10 +15,10 @@ const scrollTo = (id) => {
 <template>
   <div class="relative min-h-screen flex flex-col">
     <!-- Groene lijn langs de rechterkant (achtergrond) -->
-<div class="fixed right-0 top-0 h-full w-[75px] sm:w-[220px] bg-middendorp_green -z-10"></div>
+<div class="fixed right-0 top-0 h-full w-[var(--band-width)] bg-middendorp_green -z-10"></div>
 
     <Header
-        title="Transport en koeriers diensten"
+        title="Transport en <br> koeriers diensten"
         :background="headerBackground"
         @scroll-to="scrollTo"
         :showContactButton="true"

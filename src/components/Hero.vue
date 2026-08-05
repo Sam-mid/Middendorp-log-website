@@ -1,12 +1,19 @@
 <script setup>
+import { computed } from "vue";
 import Button from "./Button.vue";
 import HeroNotch from "./HeroNotch.vue";
 
-defineProps({
+const props = defineProps({
+  // Een <br> in de titel bepaalt waar de regel breekt. Verdere HTML wordt
+  // gewoon als tekst getoond; zo hoeft hier geen v-html te staan.
   title: { type: String, required: true },
   background: { type: String, required: true },
   showContactButton: { type: Boolean, default: false }
 });
+
+const titelRegels = computed(() =>
+    props.title.split(/<br\s*\/?>/i).map((regel) => regel.trim())
+);
 
 const emit = defineEmits(["scroll-to"]);
 </script>
@@ -16,6 +23,7 @@ const emit = defineEmits(["scroll-to"]);
     <img
         :src="background"
         alt="header"
+        fetchpriority="high"
         class="w-full h-full object-cover brightness-[0.6] z-0"
     />
 
@@ -26,7 +34,9 @@ const emit = defineEmits(["scroll-to"]);
     <div class="hero-content absolute inset-0 flex flex-col justify-center z-10">
       <div class="hero-container flex flex-col gap-8 items-start text-left">
         <h1 class="text-white text-3xl sm:text-5xl md:text-6xl font-bold max-w-2xl">
-          {{ title }}
+          <template v-for="(regel, i) in titelRegels" :key="i">
+            <br v-if="i > 0" />{{ regel }}
+          </template>
         </h1>
 
         <!-- Op mobiel is er geen inham, dus staat de knop onder de titel. -->
@@ -64,7 +74,7 @@ const emit = defineEmits(["scroll-to"]);
     <!-- Rechts loopt de groene baan van de pagina door; de foto valt er
          bovenop en laat hem op de hoogte van de inham weer vrij. -->
     <div
-        class="hero-edge absolute bottom-0 right-0 z-20 hidden sm:block w-[220px] bg-middendorp_green"
+        class="hero-edge absolute bottom-0 right-0 z-20 hidden sm:block w-[var(--band-width)] bg-middendorp_green"
     ></div>
   </div>
 </template>
