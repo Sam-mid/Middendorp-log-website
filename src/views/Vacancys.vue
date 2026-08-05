@@ -37,7 +37,8 @@ export default defineComponent({
         <div class="flex-1 z-10 animate-fade-in-left">
           <h1 class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-6 leading-tight">Kom jij ons team versterken?</h1>
           <div class="h-1 w-20 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mb-8"></div>
-          <p class="text-lg leading-relaxed text-gray-700">
+          <!-- Introzin als tussenstap tussen de kop en de lopende tekst -->
+          <p class="max-w-3xl text-xl leading-snug font-medium text-middendorp_darkgreen">
             Ben jij een enthousiaste chauffeur met rijbewijs C die houdt van afwisseling en uitdaging?
             Zoek je een plek waar collegialiteit en een goede sfeer voorop staan? Dan is Middendorp Logistiek in Leidschendam op zoek naar jou!
           </p>
@@ -49,7 +50,7 @@ export default defineComponent({
               <span class="text-3xl"></span>
               Waar ga je werken?
             </h3>
-            <p class="text-lg leading-relaxed text-gray-700">
+            <p class="text-lg leading-relaxed text-middendorp_black">
               Middendorp Logistiek is gevestigd in Stompwijk en sinds 1972 een vertrouwde naam in de transportsector.
               Als klein familiebedrijf met een groot hart werken we dagelijks aan uitdagende opdrachten voor klanten zoals Ceva Logistics en KPN.
               Ons team van ervaren chauffeurs zorgt voor een collegiale sfeer waarin iedereen telt.
@@ -61,7 +62,7 @@ export default defineComponent({
               <span class="text-3xl"></span>
               Wat ga je doen?
             </h3>
-            <p class="text-lg leading-relaxed text-gray-700">
+            <p class="text-lg leading-relaxed text-middendorp_black">
               Als chauffeur bij ons vervoer je een breed scala aan ladingen door heel Nederland. Van keukens tot technische installaties: je maakt het mee.
               Je laadt, vervoert en lost vracht en houdt daarbij rekening met de wensen van onze klanten.
               Flexibiliteit is belangrijk, want geen dag is hetzelfde.
@@ -86,7 +87,7 @@ export default defineComponent({
               Wat vragen wij van jou?
             </h2>
             <div class="h-1 w-20 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mb-8"></div>
-            <ul class="space-y-4 text-lg text-gray-700">
+            <ul class="space-y-4 text-lg text-middendorp_black">
               <li class="flex items-start gap-3">
                 <span class="text-middendorp_green font-bold mt-1">•</span>
                 <span>Rijbewijs C en Code 95.</span>
@@ -113,7 +114,7 @@ export default defineComponent({
               Wat krijg je van ons?
             </h2>
             <div class="h-1 w-20 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mb-8"></div>
-            <ul class="space-y-4 text-lg text-gray-700">
+            <ul class="space-y-4 text-lg text-middendorp_black">
               <li class="flex items-start gap-3">
                 <span class="text-middendorp_green font-bold mt-1">•</span>
                 <span>Salaris conform schaal D, trede 5.</span>

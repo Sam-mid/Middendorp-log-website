@@ -16,15 +16,22 @@ import Carousel from "./Carousel.vue"
     <div class="relative z-30 flex flex-col max-w-[1600px] mx-auto lg:flex-row justify-between items-start lg:items-stretch px-4 sm:px-8 lg:px-16 py-20 gap-12">
 
       <!-- Tekstblok -->
-      <div class="flex-1 max-w-xl z-10 animate-fade-in-left">
+      <div class="flex-1 max-w-2xl z-10 animate-fade-in-left">
         <h1 class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-6 leading-tight tracking-tight">Wie zijn wij?</h1>
         <div class="h-1 w-20 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mb-8"></div>
-        <p class="text-lg leading-relaxed text-gray-700 space-y-4">
-          <span class="block">Wij zijn al meer dan 50 jaar vertrouwd in transport.</span>
 
-          <span class="block">Bij Middendorp Logistiek staan betrouwbaarheid, nauwkeurigheid en zorg centraal.
-          Al generaties lang vervoeren wij goederen met de grootste zorg alsof het onze eigen materialen zijn.
-          Met een ervaren team en persoonlijke service zorgen we ervoor dat alles op tijd, correct en veilig op de plaats van bestemming komt.</span>
+        <!-- Introzin als tussenstap tussen de kop en de lopende tekst -->
+        <p class="text-xl lg:text-2xl leading-snug font-medium text-middendorp_darkgreen mb-6">
+          Wij zijn al meer dan 50 jaar vertrouwd in transport.
+        </p>
+
+        <p class="text-lg leading-relaxed text-middendorp_black">
+          Bij Middendorp Logistiek staan
+          <strong class="font-semibold text-middendorp_darkgreen">betrouwbaarheid, nauwkeurigheid en zorg</strong>
+          centraal. Al generaties lang vervoeren wij goederen met de grootste zorg alsof het onze eigen materialen zijn.
+          Met een ervaren team en persoonlijke service zorgen we ervoor dat alles
+          <strong class="font-semibold text-middendorp_darkgreen">op tijd, correct en veilig</strong>
+          op de plaats van bestemming komt.
         </p>
       </div>
 

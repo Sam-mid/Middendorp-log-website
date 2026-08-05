@@ -60,7 +60,7 @@ const cards = [
               </h3>
               <!-- Zelfde groene streep als onder de sectiekoppen -->
               <div class="h-1 w-12 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mt-3 mb-5"></div>
-              <p class="text-gray-700 flex-grow leading-relaxed">{{ card.text }}</p>
+              <p class="text-middendorp_black flex-grow leading-relaxed">{{ card.text }}</p>
             </div>
           </div>
         </div>
