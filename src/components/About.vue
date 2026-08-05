@@ -3,7 +3,11 @@ import Carousel from "./Carousel.vue"
 </script>
 
 <template>
-  <div class="bg-middendorp_white relative overflow-hidden">
+  <div class="relative overflow-hidden">
+
+    <!-- Achtergrond stopt voor de groene baan rechts, zoals in het design.
+         De carousel loopt er wel overheen. -->
+    <div class="absolute inset-y-0 left-0 right-0 sm:right-[220px] bg-middendorp_white"></div>
 
     <div class="relative z-0 flex flex-col max-w-[1600px] mx-auto lg:flex-row justify-between items-start px-4 sm:px-8 lg:px-16 py-20 gap-12">
 

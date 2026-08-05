@@ -24,15 +24,25 @@ const emit = defineEmits(["scroll-to"]);
 
     <!-- Titel: gecentreerd in de ruimte bóven de inham -->
     <div
-        class="hero-content absolute inset-0 flex flex-col justify-center items-center sm:items-start text-center sm:text-left px-4 sm:px-8 lg:px-16 z-10"
+        class="hero-content absolute inset-0 flex flex-col gap-8 justify-center items-center sm:items-start text-center sm:text-left px-4 sm:px-8 lg:px-16 z-10"
     >
       <h1 class="text-white text-3xl sm:text-5xl md:text-6xl font-bold max-w-2xl">
         {{ title }}
       </h1>
+
+      <!-- Op mobiel is er geen inham, dus staat de knop onder de titel. -->
+      <Button
+          v-if="showContactButton"
+          class="sm:hidden"
+          label="Neem contact op"
+          variant="primary"
+          size="lg"
+          @click="emit('scroll-to', 'footer')"
+      />
     </div>
 
-    <!-- De inham linksonder, met daarin de call-to-action -->
-    <HeroNotch class="absolute bottom-0 left-0 z-20">
+    <!-- De inham; positioneert zichzelf vanaf de rechterkant van de hero -->
+    <HeroNotch class="z-20">
       <Button
           v-if="showContactButton"
           label="Neem contact op"
@@ -41,13 +51,20 @@ const emit = defineEmits(["scroll-to"]);
           @click="emit('scroll-to', 'footer')"
       />
     </HeroNotch>
+
+    <!-- Rechts loopt de groene baan van de pagina door; de foto valt er
+         bovenop en laat hem op de hoogte van de inham weer vrij. -->
+    <div
+        class="hero-edge absolute bottom-0 right-0 z-20 hidden sm:block w-[220px] bg-middendorp_green"
+    ></div>
   </div>
 </template>
 
 <style scoped>
-/* Hoogte van de inham; HeroNotch erft deze waarde. */
+/* Hoogte van de inham; HeroNotch erft deze waarde.
+   Op mobiel 0, want daar staat de inham uit. */
 .hero {
-  --notch-height: 84px;
+  --notch-height: 0px;
 }
 
 @media (min-width: 640px) {
@@ -65,5 +82,9 @@ const emit = defineEmits(["scroll-to"]);
 /* Houd de titel vrij van de inham. */
 .hero-content {
   padding-bottom: var(--notch-height);
+}
+
+.hero-edge {
+  height: var(--notch-height);
 }
 </style>
