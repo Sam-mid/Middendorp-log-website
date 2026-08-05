@@ -18,7 +18,7 @@ const scrollTo = (id) => {
 <div class="fixed right-0 top-0 h-full w-[var(--band-width)] bg-middendorp_green -z-10"></div>
 
     <Header
-        title="Transport en koeriers diensten"
+        title="Transport en <br> koeriers diensten"
         :background="headerBackground"
         @scroll-to="scrollTo"
         :showContactButton="true"
