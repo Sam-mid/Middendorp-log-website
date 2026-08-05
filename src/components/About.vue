@@ -3,13 +3,17 @@ import Carousel from "./Carousel.vue"
 </script>
 
 <template>
-  <div class="relative overflow-hidden">
+  <!-- Geen overflow-hidden: de carousel steekt boven de sectie uit, tot in de
+       inham van de hero. -->
+  <div class="relative">
 
     <!-- Achtergrond stopt voor de groene baan rechts, zoals in het design.
          De carousel loopt er wel overheen. -->
     <div class="absolute inset-y-0 left-0 right-0 sm:right-[220px] bg-middendorp_white"></div>
 
-    <div class="relative z-0 flex flex-col max-w-[1600px] mx-auto lg:flex-row justify-between items-start px-4 sm:px-8 lg:px-16 py-20 gap-12">
+    <!-- z-30 zodat de carousel over de inham en de groene baan van de hero
+         heen valt; die staan op z-20. -->
+    <div class="relative z-30 flex flex-col max-w-[1600px] mx-auto lg:flex-row justify-between items-start px-4 sm:px-8 lg:px-16 py-20 gap-12">
 
       <!-- Tekstblok -->
       <div class="flex-1 max-w-xl z-10 animate-fade-in-left">
@@ -24,8 +28,9 @@ import Carousel from "./Carousel.vue"
         </p>
       </div>
 
-      <!-- Carousel i.p.v. losse afbeeldingen -->
-      <div class="relative w-full lg:w-[600px] mt-12 lg:mt-0 z-10 animate-fade-in-right">
+      <!-- Carousel i.p.v. losse afbeeldingen. De negatieve marge trekt hem
+           omhoog tot in de inham van de hero, zoals in het design. -->
+      <div class="relative w-full lg:w-[45%] xl:w-[50%] mt-12 lg:-mt-[164px] z-10 animate-fade-in-right">
         <Carousel />
       </div>
     </div>

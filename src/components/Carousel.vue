@@ -5,9 +5,11 @@ import { ref, onMounted, onUnmounted } from "vue"
 import foto1 from "@/assets/img/carousel/foto1.jpg";
 import foto2 from "@/assets/img/carousel/foto2.jpg";
 import foto3 from "@/assets/img/carousel/foto3.jpg";
+import foto4 from "@/assets/img/carousel/foto4.jpg"
+
 
 // Zet de geïmporteerde afbeeldingen in de array
-const images = [foto1, foto2, foto3];
+const images = [foto4, foto2, foto3];
 
 const currentIndex = ref(0);
 const total = images.length;
