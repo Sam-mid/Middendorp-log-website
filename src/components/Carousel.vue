@@ -43,10 +43,11 @@ const onTouchEnd = (e) => {
 </script>
 
 <template>
-  <div class="relative w-full max-w-[1600px] mx-auto overflow-hidden shadow-lg">
-    <!-- Slides -->
+  <div class="relative w-full h-full max-w-[1600px] mx-auto overflow-hidden shadow-lg">
+    <!-- Slides. Vanaf lg vullen ze de hoogte van het vak eromheen; daaronder
+         houden ze een vaste beeldhoogte aan. -->
     <div
-        class="flex transition-transform duration-500"
+        class="flex h-full transition-transform duration-500"
         :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
         @touchstart="onTouchStart"
         @touchend="onTouchEnd"
@@ -54,12 +55,12 @@ const onTouchEnd = (e) => {
       <div
           v-for="(img, i) in images"
           :key="i"
-          class="w-full flex-shrink-0"
+          class="w-full h-full flex-shrink-0"
       >
         <img
             :src="img"
             alt="carousel image"
-            class="w-full h-64 sm:h-96 object-cover"
+            class="w-full h-64 sm:h-96 lg:h-full object-cover"
         />
       </div>
     </div>

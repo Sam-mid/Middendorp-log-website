@@ -13,7 +13,7 @@ import Carousel from "./Carousel.vue"
 
     <!-- z-30 zodat de carousel over de inham en de groene baan van de hero
          heen valt; die staan op z-20. -->
-    <div class="relative z-30 flex flex-col max-w-[1600px] mx-auto lg:flex-row justify-between items-start px-4 sm:px-8 lg:px-16 py-20 gap-12">
+    <div class="relative z-30 flex flex-col max-w-[1600px] mx-auto lg:flex-row justify-between items-start lg:items-stretch px-4 sm:px-8 lg:px-16 py-20 gap-12">
 
       <!-- Tekstblok -->
       <div class="flex-1 max-w-xl z-10 animate-fade-in-left">
@@ -28,10 +28,14 @@ import Carousel from "./Carousel.vue"
         </p>
       </div>
 
-      <!-- Carousel i.p.v. losse afbeeldingen. De negatieve marge trekt hem
-           omhoog tot in de inham van de hero, zoals in het design. -->
+      <!-- Carousel i.p.v. losse afbeeldingen.
+           De rij rekt uit (lg:items-stretch), dus de onderkant valt samen met
+           die van de tekst. De negatieve marge maakt het vak 164px hoger dan
+           de rij, waardoor de bovenkant 84px boven de sectie uitsteekt, tot in
+           de inham van de hero. De carousel vult dat vak absoluut, zodat zijn
+           eigen hoogte de rij niet beïnvloedt. -->
       <div class="relative w-full lg:w-[45%] xl:w-[50%] mt-12 lg:-mt-[164px] z-10 animate-fade-in-right">
-        <Carousel />
+        <Carousel class="lg:absolute lg:inset-0" />
       </div>
     </div>
   </div>
