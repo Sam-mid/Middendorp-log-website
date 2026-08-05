@@ -30,9 +30,10 @@ const row2 = partners.filter((_, i) => i % 2 !== 0);
 
     <!-- Kop blijft in de paginacontainer staan -->
     <div class="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-16">
-      <h1 class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-8 sm:mb-16 text-center sm:text-left">
+      <h1 class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-6 text-center sm:text-left">
         Klanten en partners
       </h1>
+      <div class="h-1 w-20 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mb-8 sm:mb-16 mx-auto sm:mx-0"></div>
     </div>
 
     <!-- De rijen lopen over de volle schermbreedte door, tot onder de groene

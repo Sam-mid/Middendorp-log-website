@@ -30,34 +30,37 @@ const cards = [
           class="relative z-0 max-w-[1600px] mx-auto lg:flex-row justify-between items-center px-4 sm:px-8 lg:px-16 py-20"
       >
         <h1
-            class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-16"
+            class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-6"
         >
-          Onze specializaties
+          Onze specialisaties
         </h1>
+        <div class="h-1 w-20 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mb-16"></div>
 
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div
               v-for="(card, index) in cards"
               :key="index"
-              class="bg-white shadow-lg overflow-hidden flex flex-col transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 animate-fade-in"
+              class="group bg-middendorp_white flex flex-col animate-fade-in"
               :style="{ animationDelay: `${index * 100}ms` }"
           >
-            <div class="relative h-48 w-full overflow-hidden flex items-center justify-center">
+            <!-- Schuine onderrand, in dezelfde richting als de inham in de hero -->
+            <div class="card-media h-48 w-full overflow-hidden">
               <img
                   :src="card.img"
                   :alt="card.title"
-                  class="h-full w-full object-cover hover:opacity-100 transition-opacity duration-300"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div class="absolute inset-0 to-transparent"></div>
-              <span class="absolute text-5xl drop-shadow-lg">{{ card.icon }}</span>
             </div>
-            <div class="p-6 flex flex-col flex-grow bg-middendorp_white">
+
+            <div class="px-6 pb-8 pt-4 flex flex-col flex-grow">
               <h3
-                  class="text-xl font-bold mb-3 text-middendorp_darkgreen tracking-wide"
+                  class="text-xl font-bold text-middendorp_darkgreen tracking-wide"
               >
                 {{ card.title }}
               </h3>
-              <p class="text-gray-600 flex-grow leading-relaxed text-sm">{{ card.text }}</p>
+              <!-- Zelfde groene streep als onder de sectiekoppen; groeit bij hover -->
+              <div class="h-1 w-12 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mt-3 mb-5 transition-all duration-300 group-hover:w-24"></div>
+              <p class="text-gray-700 flex-grow leading-relaxed">{{ card.text }}</p>
             </div>
           </div>
         </div>
@@ -67,6 +70,17 @@ const cards = [
 </template>
 
 <style scoped>
+/* De onderrand van de foto loopt schuin weg, in dezelfde richting als de
+   inham in de hero: naar links aflopend. De hoek van de inham zelf (0,3573
+   van de hoogte) zou over de breedte van een kaart ruim 170px zakken, dus
+   hier een vlakkere variant die het motief herhaalt zonder de kaart te
+   verminken. */
+.card-media {
+  --card-slant: 24px;
+
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--card-slant)), 0 100%);
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
