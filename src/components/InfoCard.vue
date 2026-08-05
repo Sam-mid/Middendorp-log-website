@@ -39,7 +39,7 @@ const cards = [
           <div
               v-for="(card, index) in cards"
               :key="index"
-              class="bg-white shadow-lg hover:shadow-2xl overflow-hidden flex flex-col transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 animate-fade-in"
+              class="bg-white shadow-lg overflow-hidden flex flex-col transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 animate-fade-in"
               :style="{ animationDelay: `${index * 100}ms` }"
           >
             <div class="relative h-48 w-full overflow-hidden flex items-center justify-center">

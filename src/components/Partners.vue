@@ -26,12 +26,18 @@ const row2 = partners.filter((_, i) => i % 2 !== 0);
 </script>
 
 <template>
-  <div class="relative z-0 max-w-[1600px] mx-auto lg:flex-row justify-between items-center px-4 sm:px-8 lg:px-16 py-20">
-    <h1 class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-8 sm:mb-16 text-center sm:text-left">
-      Klanten en partners
-    </h1>
+  <div class="relative z-0 py-20">
 
-    <div class=" py-6 overflow-hidden space-y-8 sm:space-y-12">
+    <!-- Kop blijft in de paginacontainer staan -->
+    <div class="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-16">
+      <h1 class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-8 sm:mb-16 text-center sm:text-left">
+        Klanten en partners
+      </h1>
+    </div>
+
+    <!-- De rijen lopen over de volle schermbreedte door, tot onder de groene
+         baan rechts. -->
+    <div class="py-6 overflow-hidden space-y-8 sm:space-y-12">
 
       <!-- Eerste scroll-rij -->
       <div class="scroll-track">
@@ -60,6 +66,13 @@ const row2 = partners.filter((_, i) => i % 2 !== 0);
       </div>
 
     </div>
+
+    <!-- Zelfde groene baan als op de rest van de pagina, maar hier bovenop de
+         logo's. Daardoor lijken ze er onder vandaan te komen in plaats van
+         eroverheen te lopen. -->
+    <div
+        class="absolute inset-y-0 right-0 z-20 w-[75px] sm:w-[220px] bg-middendorp_green pointer-events-none"
+    ></div>
   </div>
 </template>
 
