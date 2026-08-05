@@ -3,14 +3,9 @@
  * De "inham" uit het Figma-design.
  *
  * De vector uit Figma (Vector.svg) is 915px breed in een frame van 1600px en
- * staat vast aan de RECHTERKANT van de hero. Zijn linkerrand loopt schuin:
- * 51,81px over 145px hoogte (verhouding 0,3573), en helt naar links naar
- * beneden toe. Het grijs van de inham is wat links van die schuine rand
- * overblijft; daar staat de call-to-action in (slot).
- *
- * Daarom is dit element vanaf rechts gepositioneerd (right), niet met een
- * eigen breedte vanaf links. Zo blijft de schuine rand op elke schermbreedte
- * op dezelfde plek zitten als in het design.
+ * staat absoluut gepositioneerd tegen de RECHTERKANT van de hero. Zijn
+ * linkerrand loopt schuin: 51,81px over 145px hoogte (verhouding 0,3573),
+ * naar links toe naar beneden. De rechterrand is recht.
  *
  * De hoogte komt van --notch-height, die de Hero op zijn root zet, zodat de
  * hero-tekst dezelfde hoogte kan gebruiken om vrij te blijven van de inham.
@@ -31,16 +26,15 @@
   --notch-slant: calc(var(--notch-height, 145px) * 0.3573);
 
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 0;
   height: var(--notch-height, 145px);
 
-  /* 915 / 1600 = 57,19% vanaf rechts. Op smallere schermen houden we minimaal
-     22rem over, anders past de knop niet meer in de inham. */
-  right: min(57.19%, calc(100% - 22rem));
-  /* Ruimte voor de schuine rand, die bovenaan verder naar rechts loopt. */
-  margin-right: calc(-1 * var(--notch-slant));
+  /* De vector is 915px breed in een frame van 1600px = 57,19%. */
+  width: 57.19%;
 
-  clip-path: polygon(0 0, 100% 0, calc(100% - var(--notch-slant)) 100%, 0 100%);
+  /* Schuine rand links, rechterrand recht — precies de vector:
+     linksboven op 51,81px, linksonder op 0. */
+  clip-path: polygon(var(--notch-slant) 0, 0 100%, 100% 100%, 100% 0);
 }
 </style>
