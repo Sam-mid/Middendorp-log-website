@@ -13,7 +13,7 @@ const props = defineProps({
   },
   size: {
     type: String,
-    default: "md" // opties: sm, md, lg
+    default: "md" // opties: sm, md, lg, xl
   },
   type: {
     type: String,
@@ -41,6 +41,10 @@ const sizeClasses = computed(() => {
       return "px-3 py-1 text-sm";
     case "lg":
       return "px-10 py-5 text-xl";
+    case "xl":
+      // Hero-formaat: schaalt mee vanaf 1080px, zodat de knop niet wegvalt
+      // tegen een grote hero-afbeelding.
+      return "px-10 py-5 text-xl min-[1080px]:px-14 min-[1080px]:py-6 min-[1080px]:text-2xl";
     default:
       return "px-4 py-2 text-base";
   }

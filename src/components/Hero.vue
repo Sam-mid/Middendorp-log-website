@@ -55,7 +55,7 @@ const emit = defineEmits(["scroll-to"]);
             class="pointer-events-auto"
             label="Neem contact op"
             variant="primary"
-            size="lg"
+            size="xl"
             @click="emit('scroll-to', 'footer')"
         />
       </div>
