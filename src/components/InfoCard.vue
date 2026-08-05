@@ -40,7 +40,7 @@ const cards = [
           <div
               v-for="(card, index) in cards"
               :key="index"
-              class="group bg-middendorp_white flex flex-col animate-fade-in"
+              class="bg-middendorp_white flex flex-col animate-fade-in"
               :style="{ animationDelay: `${index * 100}ms` }"
           >
             <!-- Schuine onderrand, in dezelfde richting als de inham in de hero -->
@@ -48,7 +48,7 @@ const cards = [
               <img
                   :src="card.img"
                   :alt="card.title"
-                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  class="h-full w-full object-cover"
               />
             </div>
 
@@ -58,8 +58,8 @@ const cards = [
               >
                 {{ card.title }}
               </h3>
-              <!-- Zelfde groene streep als onder de sectiekoppen; groeit bij hover -->
-              <div class="h-1 w-12 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mt-3 mb-5 transition-all duration-300 group-hover:w-24"></div>
+              <!-- Zelfde groene streep als onder de sectiekoppen -->
+              <div class="h-1 w-12 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mt-3 mb-5"></div>
               <p class="text-gray-700 flex-grow leading-relaxed">{{ card.text }}</p>
             </div>
           </div>
