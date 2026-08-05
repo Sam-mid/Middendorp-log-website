@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue';
-import foto1 from "@/assets/img/cards/foto1.jpeg";
-import foto2 from "@/assets/img/cards/foto2.jpeg";
-import foto3 from "@/assets/img/cards/foto3.jpeg";
+import foto1 from "@/assets/img/cards/foto1.webp";
+import foto2 from "@/assets/img/cards/foto2.webp";
+import foto3 from "@/assets/img/cards/foto3.webp";
 
 const cards = [
   {
@@ -25,9 +25,8 @@ const cards = [
 
 <template>
   <section>
-    <div class="max-w-[1600px] mx-auto">
       <div
-          class="relative z-0 max-w-[1600px] mx-auto lg:flex-row justify-between items-center px-4 sm:px-8 lg:px-16 py-20"
+          class="relative z-0 max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-16 py-20"
       >
         <h1
             class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-6"
@@ -48,6 +47,8 @@ const cards = [
               <img
                   :src="card.img"
                   :alt="card.title"
+                  loading="lazy"
+                  decoding="async"
                   class="h-full w-full object-cover"
               />
             </div>
@@ -65,7 +66,6 @@ const cards = [
           </div>
         </div>
       </div>
-    </div>
   </section>
 </template>
 

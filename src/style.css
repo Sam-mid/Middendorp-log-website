@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Latin-subset van de variabele Noto Sans als woff2: 2044 kB -> 92 kB.
+   font-stretch volgt de echte wdth-as van het bestand (62.5-100); er stond
+   75% 125%, een bereik dat het lettertype niet heeft. */
 @font-face {
   font-family: 'Noto Sans';
-  src: url('/src/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+  src: url('/src/assets/fonts/NotoSans-latin-variable.woff2') format('woff2-variations');
   font-weight: 100 900;
-  font-stretch: 75% 125%;
+  font-stretch: 62.5% 100%;
   font-display: swap;
 }
 

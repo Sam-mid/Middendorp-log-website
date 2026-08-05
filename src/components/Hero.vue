@@ -16,6 +16,7 @@ const emit = defineEmits(["scroll-to"]);
     <img
         :src="background"
         alt="header"
+        fetchpriority="high"
         class="w-full h-full object-cover brightness-[0.6] z-0"
     />
 

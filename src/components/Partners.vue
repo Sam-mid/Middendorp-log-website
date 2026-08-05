@@ -44,11 +44,11 @@ const row2 = partners.filter((_, i) => i % 2 !== 0);
       <div class="scroll-track">
         <div class="scroll-content">
           <div v-for="(partner, index) in row1" :key="'row1a-' + index" class="logo">
-            <img :src="partner" alt="partner logo" class="h-10 sm:h-16 w-auto object-contain" />
+            <img :src="partner" alt="partner logo" loading="lazy" decoding="async" class="h-10 sm:h-16 w-auto object-contain" />
           </div>
           <!-- Duplicaat voor oneindig scrollen -->
           <div v-for="(partner, index) in row1" :key="'row1b-' + index" class="logo">
-            <img :src="partner" alt="partner logo" class="h-10 sm:h-16 w-auto object-contain" />
+            <img :src="partner" alt="partner logo" loading="lazy" decoding="async" class="h-10 sm:h-16 w-auto object-contain" />
           </div>
         </div>
       </div>
@@ -57,11 +57,11 @@ const row2 = partners.filter((_, i) => i % 2 !== 0);
       <div class="scroll-track reverse">
         <div class="scroll-content">
           <div v-for="(partner, index) in row2" :key="'row2a-' + index" class="logo">
-            <img :src="partner" alt="partner logo" class="h-10 sm:h-16 w-auto object-contain" />
+            <img :src="partner" alt="partner logo" loading="lazy" decoding="async" class="h-10 sm:h-16 w-auto object-contain" />
           </div>
           <!-- Duplicaat voor oneindig scrollen -->
           <div v-for="(partner, index) in row2" :key="'row2b-' + index" class="logo">
-            <img :src="partner" alt="partner logo" class="h-10 sm:h-16 w-auto object-contain" />
+            <img :src="partner" alt="partner logo" loading="lazy" decoding="async" class="h-10 sm:h-16 w-auto object-contain" />
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer.vue";
 import Button from "@/components/Button.vue";
 
 import logoUrl from "@/assets/img/middendorp_logo.svg";
-import vacancyHeader from "@/assets/img/vacancy_header.jpeg";
+import vacancyHeader from "@/assets/img/vacancy_header.webp";
 
 export default defineComponent({
   components: { Button, Header, Footer },
@@ -47,7 +47,6 @@ export default defineComponent({
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div class="z-10 animate-fade-in">
             <h3 class="text-middendorp_darkgreen font-bold text-2xl lg:text-3xl mb-4 flex items-center gap-3">
-              <span class="text-3xl"></span>
               Waar ga je werken?
             </h3>
             <p class="text-lg leading-relaxed text-middendorp_black">
@@ -59,7 +58,6 @@ export default defineComponent({
 
           <div class="z-10 animate-fade-in" style="animation-delay: 100ms">
             <h3 class="text-middendorp_darkgreen font-bold text-2xl lg:text-3xl mb-4 flex items-center gap-3">
-              <span class="text-3xl"></span>
               Wat ga je doen?
             </h3>
             <p class="text-lg leading-relaxed text-middendorp_black">
@@ -83,7 +81,6 @@ export default defineComponent({
           <!-- Requirements -->
           <div class="z-10 animate-fade-in-left">
             <h2 class="text-middendorp_darkgreen font-bold text-3xl lg:text-4xl mb-6 flex items-center gap-3">
-              <span class="text-4xl"></span>
               Wat vragen wij van jou?
             </h2>
             <div class="h-1 w-20 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mb-8"></div>
@@ -110,7 +107,6 @@ export default defineComponent({
           <!-- Benefits -->
           <div class="z-10 animate-fade-in-right">
             <h2 class="text-middendorp_darkgreen font-bold text-3xl lg:text-4xl mb-6 flex items-center gap-3">
-              <span class="text-4xl"></span>
               Wat krijg je van ons?
             </h2>
             <div class="h-1 w-20 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mb-8"></div>

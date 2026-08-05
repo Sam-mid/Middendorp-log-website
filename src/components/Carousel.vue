@@ -2,11 +2,9 @@
 import { ref, onMounted, onUnmounted } from "vue"
 
 // Importeer de afbeeldingen
-import foto1 from "@/assets/img/carousel/foto1.jpg";
-import foto2 from "@/assets/img/carousel/foto2.jpg";
-import foto3 from "@/assets/img/carousel/foto3.jpg";
-import foto4 from "@/assets/img/carousel/foto4.jpg"
-
+import foto2 from "@/assets/img/carousel/foto2.webp";
+import foto3 from "@/assets/img/carousel/foto3.webp";
+import foto4 from "@/assets/img/carousel/foto4.webp";
 
 // Zet de geïmporteerde afbeeldingen in de array
 const images = [foto4, foto2, foto3];
@@ -60,6 +58,8 @@ const onTouchEnd = (e) => {
         <img
             :src="img"
             alt="carousel image"
+            loading="lazy"
+            decoding="async"
             class="w-full h-64 sm:h-96 lg:h-full object-cover"
         />
       </div>

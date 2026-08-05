@@ -5,7 +5,7 @@ import Footer from "../components/Footer.vue";
 import Partners from "../components/Partners.vue";
 import InfoCard from "../components/InfoCard.vue";
 
-import headerBackground from "@/assets/img/header-background.jpeg";
+import headerBackground from "@/assets/img/header-background.webp";
 
 const scrollTo = (id) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
