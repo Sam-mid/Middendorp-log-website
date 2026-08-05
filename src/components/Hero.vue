@@ -41,8 +41,13 @@ const emit = defineEmits(["scroll-to"]);
       />
     </div>
 
-    <!-- De inham; positioneert zichzelf vanaf de rechterkant van de hero -->
-    <HeroNotch class="z-20">
+    <!-- De inham; positioneert zichzelf tegen de rechterkant van de hero -->
+    <HeroNotch class="z-20" />
+
+    <!-- De knop staat links naast de inham, op dezelfde hoogte -->
+    <div
+        class="hero-cta absolute bottom-0 left-0 z-20 hidden sm:flex items-center pl-8 lg:pl-16"
+    >
       <Button
           v-if="showContactButton"
           label="Neem contact op"
@@ -50,7 +55,7 @@ const emit = defineEmits(["scroll-to"]);
           size="lg"
           @click="emit('scroll-to', 'footer')"
       />
-    </HeroNotch>
+    </div>
 
     <!-- Rechts loopt de groene baan van de pagina door; de foto valt er
          bovenop en laat hem op de hoogte van de inham weer vrij. -->
@@ -84,7 +89,8 @@ const emit = defineEmits(["scroll-to"]);
   padding-bottom: var(--notch-height);
 }
 
-.hero-edge {
+.hero-edge,
+.hero-cta {
   height: var(--notch-height);
 }
 </style>

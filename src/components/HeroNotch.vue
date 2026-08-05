@@ -7,8 +7,11 @@
  * linkerrand loopt schuin: 51,81px over 145px hoogte (verhouding 0,3573),
  * naar links toe naar beneden. De rechterrand is recht.
  *
+ * Dit component is puur de vorm. De call-to-action staat er links naast en
+ * wordt door de Hero geplaatst.
+ *
  * De hoogte komt van --notch-height, die de Hero op zijn root zet, zodat de
- * hero-tekst dezelfde hoogte kan gebruiken om vrij te blijven van de inham.
+ * hero-tekst en de knop dezelfde hoogte kunnen gebruiken.
  *
  * Op mobiel staat de inham uit: daar is te weinig breedte om de schuine rand
  * te laten werken. De Hero zet de knop dan onder de titel.
@@ -16,9 +19,7 @@
 </script>
 
 <template>
-  <div class="notch bg-middendorp_white hidden sm:flex items-center pl-8 lg:pl-16">
-    <slot />
-  </div>
+  <div class="notch bg-middendorp_white hidden sm:block"></div>
 </template>
 
 <style scoped>
