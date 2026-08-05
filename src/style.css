@@ -11,6 +11,12 @@
 }
 
 :root {
+  /* Breedte van de groene baan langs de rechterkant. Onder lg is er te weinig
+     schermbreedte om er content naast te zetten; daar is het een smalle rand,
+     zodat koppen en tekst er niet onder verdwijnen. Alles wat met de baan te
+     maken heeft leest deze waarde, zodat de breedtes niet uit elkaar lopen. */
+  --band-width: 1rem;
+
   color-scheme: light dark;
   color: rgba(0, 0, 0, 0.87);
   background-color: #ffffff;
@@ -44,4 +50,10 @@ h1 {
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --band-width: 220px;
+  }
 }

@@ -9,7 +9,7 @@ import Carousel from "./Carousel.vue"
 
     <!-- Achtergrond stopt voor de groene baan rechts, zoals in het design.
          De carousel loopt er wel overheen. -->
-    <div class="absolute inset-y-0 left-0 right-0 sm:right-[220px] bg-middendorp_white"></div>
+    <div class="absolute inset-y-0 left-0 right-[var(--band-width)] bg-middendorp_white"></div>
 
     <!-- z-30 zodat de carousel over de inham en de groene baan van de hero
          heen valt; die staan op z-20. -->

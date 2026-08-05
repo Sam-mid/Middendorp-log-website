@@ -20,7 +20,7 @@ export default defineComponent({
 <template>
   <div class="relative min-h-screen flex flex-col">
     <!-- Groene lijn langs de rechterkant -->
-    <div class="fixed right-0 top-0 h-full w-[75px] sm:w-[220px] bg-middendorp_green -z-10"></div>
+    <div class="fixed right-0 top-0 h-full w-[var(--band-width)] bg-middendorp_green -z-10"></div>
 
     <Header
         title="Vacatures"
@@ -30,7 +30,7 @@ export default defineComponent({
     <!-- Section 1: Intro -->
     <div class="relative overflow-hidden">
       <!-- Achtergrond stopt voor de groene baan rechts, zoals in het design. -->
-      <div class="absolute inset-y-0 left-0 right-0 sm:right-[220px] bg-middendorp_white"></div>
+      <div class="absolute inset-y-0 left-0 right-[var(--band-width)] bg-middendorp_white"></div>
       <div class="absolute -top-20 -left-20 w-64 h-64 bg-middendorp_green rounded-full opacity-5"></div>
       
       <div class="relative z-0 flex flex-col max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-16 py-20 gap-12">
@@ -75,7 +75,7 @@ export default defineComponent({
     <!-- Section 2: Requirements & Benefits -->
     <div class="relative overflow-hidden py-20">
       <!-- Achtergrond stopt voor de groene baan rechts, zoals in het design. -->
-      <div class="absolute inset-y-0 left-0 right-0 sm:right-[220px] bg-white"></div>
+      <div class="absolute inset-y-0 left-0 right-[var(--band-width)] bg-white"></div>
       <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-middendorp_green rounded-full opacity-5"></div>
       
       <div class="relative z-0 flex flex-col max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-16 gap-12">

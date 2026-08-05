@@ -64,7 +64,7 @@ const emit = defineEmits(["scroll-to"]);
     <!-- Rechts loopt de groene baan van de pagina door; de foto valt er
          bovenop en laat hem op de hoogte van de inham weer vrij. -->
     <div
-        class="hero-edge absolute bottom-0 right-0 z-20 hidden sm:block w-[220px] bg-middendorp_green"
+        class="hero-edge absolute bottom-0 right-0 z-20 hidden sm:block w-[var(--band-width)] bg-middendorp_green"
     ></div>
   </div>
 </template>
