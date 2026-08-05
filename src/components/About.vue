@@ -28,12 +28,6 @@ import Carousel from "./Carousel.vue"
         </p>
       </div>
 
-      <!-- Carousel i.p.v. losse afbeeldingen.
-           De rij rekt uit (lg:items-stretch), dus de onderkant valt samen met
-           die van de tekst. De negatieve marge maakt het vak 164px hoger dan
-           de rij, waardoor de bovenkant 84px boven de sectie uitsteekt, tot in
-           de inham van de hero. De carousel vult dat vak absoluut, zodat zijn
-           eigen hoogte de rij niet beïnvloedt. -->
       <div class="relative w-full lg:w-[45%] xl:w-[50%] mt-12 lg:-mt-[164px] z-10 animate-fade-in-right">
         <Carousel class="lg:absolute lg:inset-0" />
       </div>
