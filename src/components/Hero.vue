@@ -23,38 +23,42 @@ const emit = defineEmits(["scroll-to"]);
     <div class="absolute inset-0 bg-black bg-opacity-30 pointer-events-none"></div>
 
     <!-- Titel: gecentreerd in de ruimte bóven de inham -->
-    <div
-        class="hero-content absolute inset-0 flex flex-col gap-8 justify-center items-center sm:items-start text-center sm:text-left px-4 sm:px-8 lg:px-16 z-10"
-    >
-      <h1 class="text-white text-3xl sm:text-5xl md:text-6xl font-bold max-w-2xl">
-        {{ title }}
-      </h1>
+    <div class="hero-content absolute inset-0 flex flex-col justify-center z-10">
+      <div class="hero-container flex flex-col gap-8 items-start text-left">
+        <h1 class="text-white text-3xl sm:text-5xl md:text-6xl font-bold max-w-2xl">
+          {{ title }}
+        </h1>
 
-      <!-- Op mobiel is er geen inham, dus staat de knop onder de titel. -->
-      <Button
-          v-if="showContactButton"
-          class="sm:hidden"
-          label="Neem contact op"
-          variant="primary"
-          size="lg"
-          @click="emit('scroll-to', 'footer')"
-      />
+        <!-- Op mobiel is er geen inham, dus staat de knop onder de titel. -->
+        <Button
+            v-if="showContactButton"
+            class="sm:hidden"
+            label="Neem contact op"
+            variant="primary"
+            size="lg"
+            @click="emit('scroll-to', 'footer')"
+        />
+      </div>
     </div>
 
     <!-- De inham; positioneert zichzelf tegen de rechterkant van de hero -->
     <HeroNotch class="z-20" />
 
-    <!-- De knop staat links naast de inham, op dezelfde hoogte -->
+    <!-- De knop staat links naast de inham, op dezelfde hoogte en in dezelfde
+         container als de titel en de secties eronder -->
     <div
-        class="hero-cta absolute bottom-0 left-0 z-20 hidden sm:flex items-center pl-8 lg:pl-16"
+        class="hero-cta absolute bottom-0 left-0 right-0 z-20 hidden sm:flex items-center pointer-events-none"
     >
-      <Button
-          v-if="showContactButton"
-          label="Neem contact op"
-          variant="primary"
-          size="lg"
-          @click="emit('scroll-to', 'footer')"
-      />
+      <div class="hero-container">
+        <Button
+            v-if="showContactButton"
+            class="pointer-events-auto"
+            label="Neem contact op"
+            variant="primary"
+            size="lg"
+            @click="emit('scroll-to', 'footer')"
+        />
+      </div>
     </div>
 
     <!-- Rechts loopt de groene baan van de pagina door; de foto valt er
@@ -81,6 +85,27 @@ const emit = defineEmits(["scroll-to"]);
 @media (min-width: 1024px) {
   .hero {
     --notch-height: 145px;
+  }
+}
+
+/* Dezelfde container als About, InfoCard en Partners, zodat de titel en de
+   knop op elke schermbreedte uitlijnen met de secties eronder. */
+.hero-container {
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .hero-container {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-container {
+    padding-inline: 4rem;
   }
 }
 

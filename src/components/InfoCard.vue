@@ -27,7 +27,7 @@ const cards = [
   <section>
     <div class="max-w-[1600px] mx-auto">
       <div
-          class="relative z-0 max-w-[1600px] mx-auto lg:flex-row justify-between items-center px-10 py-20"
+          class="relative z-0 max-w-[1600px] mx-auto lg:flex-row justify-between items-center px-4 sm:px-8 lg:px-16 py-20"
       >
         <h1
             class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-16"
