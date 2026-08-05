@@ -5,9 +5,11 @@ import { ref, onMounted, onUnmounted } from "vue"
 import foto1 from "@/assets/img/carousel/foto1.jpg";
 import foto2 from "@/assets/img/carousel/foto2.jpg";
 import foto3 from "@/assets/img/carousel/foto3.jpg";
+import foto4 from "@/assets/img/carousel/foto4.jpg"
+
 
 // Zet de geïmporteerde afbeeldingen in de array
-const images = [foto1, foto2, foto3];
+const images = [foto4, foto2, foto3];
 
 const currentIndex = ref(0);
 const total = images.length;
@@ -41,10 +43,11 @@ const onTouchEnd = (e) => {
 </script>
 
 <template>
-  <div class="relative w-full max-w-[1600px] mx-auto overflow-hidden shadow-lg">
-    <!-- Slides -->
+  <div class="relative w-full h-full max-w-[1600px] mx-auto overflow-hidden shadow-lg">
+    <!-- Slides. Vanaf lg vullen ze de hoogte van het vak eromheen; daaronder
+         houden ze een vaste beeldhoogte aan. -->
     <div
-        class="flex transition-transform duration-500"
+        class="flex h-full transition-transform duration-500"
         :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
         @touchstart="onTouchStart"
         @touchend="onTouchEnd"
@@ -52,12 +55,12 @@ const onTouchEnd = (e) => {
       <div
           v-for="(img, i) in images"
           :key="i"
-          class="w-full flex-shrink-0"
+          class="w-full h-full flex-shrink-0"
       >
         <img
             :src="img"
             alt="carousel image"
-            class="w-full h-64 sm:h-96 object-cover"
+            class="w-full h-64 sm:h-96 lg:h-full object-cover"
         />
       </div>
     </div>
