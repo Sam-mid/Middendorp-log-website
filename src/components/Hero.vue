@@ -4,8 +4,6 @@ import Button from "./Button.vue";
 import HeroNotch from "./HeroNotch.vue";
 
 const props = defineProps({
-  // Een <br> in de titel bepaalt waar de regel breekt. Verdere HTML wordt
-  // gewoon als tekst getoond; zo hoeft hier geen v-html te staan.
   title: { type: String, required: true },
   background: { type: String, required: true },
   showContactButton: { type: Boolean, default: false }
@@ -30,7 +28,7 @@ const emit = defineEmits(["scroll-to"]);
     <!-- Overlay -->
     <div class="absolute inset-0 bg-black bg-opacity-30 pointer-events-none"></div>
 
-    <!-- Titel: gecentreerd in de ruimte bóven de inham -->
+    <!-- Titel -->
     <div class="hero-content absolute inset-0 flex flex-col justify-center z-10">
       <div class="hero-container flex flex-col gap-8 items-start text-left">
         <h1 class="text-white text-3xl sm:text-5xl md:text-6xl font-bold max-w-2xl">
@@ -39,7 +37,7 @@ const emit = defineEmits(["scroll-to"]);
           </template>
         </h1>
 
-        <!-- Op mobiel is er geen inham, dus staat de knop onder de titel. -->
+        <!-- inham uit op mobiel-->
         <Button
             v-if="showContactButton"
             class="sm:hidden"
@@ -51,11 +49,7 @@ const emit = defineEmits(["scroll-to"]);
       </div>
     </div>
 
-    <!-- De inham; positioneert zichzelf tegen de rechterkant van de hero -->
     <HeroNotch class="z-20" />
-
-    <!-- De knop staat links naast de inham, op dezelfde hoogte en in dezelfde
-         container als de titel en de secties eronder -->
     <div
         class="hero-cta absolute bottom-0 left-0 right-0 z-20 hidden sm:flex items-center pointer-events-none"
     >
@@ -70,9 +64,6 @@ const emit = defineEmits(["scroll-to"]);
         />
       </div>
     </div>
-
-    <!-- Rechts loopt de groene baan van de pagina door; de foto valt er
-         bovenop en laat hem op de hoogte van de inham weer vrij. -->
     <div
         class="hero-edge absolute bottom-0 right-0 z-20 hidden sm:block w-[var(--band-width)] bg-middendorp_green"
     ></div>
@@ -80,9 +71,6 @@ const emit = defineEmits(["scroll-to"]);
 </template>
 
 <style scoped>
-/* Hoogte van de hero en van de inham. --notch-height wordt geërfd door
-   HeroNotch en door de titel en de knop hieronder.
-   Op mobiel is de inham 0, want daar staat hij uit. */
 .hero {
   --notch-height: 0px;
   height: 40vh;
@@ -107,8 +95,7 @@ const emit = defineEmits(["scroll-to"]);
   }
 }
 
-/* Op grote schermen oogt 70vh te fors. Iets platter, met een plafond zodat
-   hij op hoge schermen niet meegroeit en een bodem voor lage vensters. */
+
 @media (min-width: 1080px) {
   .hero {
     height: 55vh;
@@ -117,8 +104,6 @@ const emit = defineEmits(["scroll-to"]);
   }
 }
 
-/* Dezelfde container als About, InfoCard en Partners, zodat de titel en de
-   knop op elke schermbreedte uitlijnen met de secties eronder. */
 .hero-container {
   width: 100%;
   max-width: 1600px;
@@ -138,7 +123,6 @@ const emit = defineEmits(["scroll-to"]);
   }
 }
 
-/* Houd de titel vrij van de inham. */
 .hero-content {
   padding-bottom: var(--notch-height);
 }

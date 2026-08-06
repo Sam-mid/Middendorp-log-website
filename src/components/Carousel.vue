@@ -42,8 +42,6 @@ const onTouchEnd = (e) => {
 
 <template>
   <div class="relative w-full h-full max-w-[1600px] mx-auto overflow-hidden shadow-lg">
-    <!-- Slides. Vanaf lg vullen ze de hoogte van het vak eromheen; daaronder
-         houden ze een vaste beeldhoogte aan. -->
     <div
         class="flex h-full transition-transform duration-500"
         :style="{ transform: `translateX(-${currentIndex * 100}%)` }"

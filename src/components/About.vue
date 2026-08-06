@@ -3,24 +3,16 @@ import Carousel from "./Carousel.vue"
 </script>
 
 <template>
-  <!-- Geen overflow-hidden: de carousel steekt boven de sectie uit, tot in de
-       inham van de hero. -->
   <div class="relative">
 
-    <!-- Achtergrond stopt voor de groene baan rechts, zoals in het design.
-         De carousel loopt er wel overheen. -->
     <div class="absolute inset-y-0 left-0 right-[var(--band-width)] bg-middendorp_white"></div>
 
-    <!-- z-30 zodat de carousel over de inham en de groene baan van de hero
-         heen valt; die staan op z-20. -->
     <div class="relative z-30 flex flex-col max-w-[1600px] mx-auto lg:flex-row justify-between items-start lg:items-stretch px-4 sm:px-8 lg:px-16 py-20 gap-12">
 
-      <!-- Tekstblok -->
       <div class="flex-1 max-w-2xl z-10 animate-fade-in-left">
         <h1 class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-6 leading-tight tracking-tight">Wie zijn wij?</h1>
         <div class="h-1 w-20 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mb-8"></div>
 
-        <!-- Introzin als tussenstap tussen de kop en de lopende tekst -->
         <p class="text-xl lg:text-2xl leading-snug font-medium text-middendorp_darkgreen mb-6">
           Wij zijn al meer dan 50 jaar vertrouwd in transport.
         </p>

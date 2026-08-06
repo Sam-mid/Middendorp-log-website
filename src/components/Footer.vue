@@ -22,9 +22,9 @@ import logo from "@/assets/img/middendorp_logo_wit.svg"
           <span class="font-semibold block mb-2">Contact:</span>
           Telefoon:
           <a
-              href="tel:0701234567"
+              href="tel:0715801918"
               class="text-middendorp_white underline hover:text-middendorp_green transition-colors font-semibold"
-          >070-1234567</a
+          >071-5801918</a
           ><br />
           E-mail:
           <a

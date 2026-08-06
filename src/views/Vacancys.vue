@@ -19,7 +19,7 @@ export default defineComponent({
 </script>
 <template>
   <div class="relative min-h-screen flex flex-col">
-    <!-- Groene lijn langs de rechterkant -->
+
     <div class="fixed right-0 top-0 h-full w-[var(--band-width)] bg-middendorp_green -z-10"></div>
 
     <Header
@@ -37,7 +37,7 @@ export default defineComponent({
         <div class="flex-1 z-10 animate-fade-in-left">
           <h1 class="text-middendorp_darkgreen font-bold text-3xl lg:text-5xl mb-6 leading-tight">Kom jij ons team versterken?</h1>
           <div class="h-1 w-20 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mb-8"></div>
-          <!-- Introzin als tussenstap tussen de kop en de lopende tekst -->
+
           <p class="max-w-3xl text-xl leading-snug font-medium text-middendorp_darkgreen">
             Ben jij een enthousiaste chauffeur met rijbewijs C die houdt van afwisseling en uitdaging?
             Zoek je een plek waar collegialiteit en een goede sfeer voorop staan? Dan is Middendorp Logistiek in Leidschendam op zoek naar jou!
@@ -70,15 +70,12 @@ export default defineComponent({
       </div>
     </div>
 
-    <!-- Section 2: Requirements & Benefits -->
     <div class="relative overflow-hidden py-20">
-      <!-- Achtergrond stopt voor de groene baan rechts, zoals in het design. -->
       <div class="absolute inset-y-0 left-0 right-[var(--band-width)] bg-white"></div>
       <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-middendorp_green rounded-full opacity-5"></div>
       
       <div class="relative z-0 flex flex-col max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-16 gap-12">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <!-- Requirements -->
           <div class="z-10 animate-fade-in-left">
             <h2 class="text-middendorp_darkgreen font-bold text-3xl lg:text-4xl mb-6 flex items-center gap-3">
               Wat vragen wij van jou?
@@ -104,7 +101,6 @@ export default defineComponent({
             </ul>
           </div>
 
-          <!-- Benefits -->
           <div class="z-10 animate-fade-in-right">
             <h2 class="text-middendorp_darkgreen font-bold text-3xl lg:text-4xl mb-6 flex items-center gap-3">
               Wat krijg je van ons?
@@ -135,7 +131,6 @@ export default defineComponent({
           </div>
         </div>
 
-        <!-- CTA Button -->
         <div class="z-10 flex justify-center mt-8">
           <a
               href="mailto:info@middendorplogistiek.nl"

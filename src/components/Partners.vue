@@ -1,5 +1,4 @@
 <script setup>
-// Importeer de afbeeldingen
 import allinq from "@/assets/img/partners/allinq.svg";
 import kpn from "@/assets/img/partners/KPN.svg";
 import paul from "@/assets/img/partners/paul.svg";
@@ -14,7 +13,7 @@ import paragon from "@/assets/img/partners/paragon.svg";
 import svz from "@/assets/img/partners/svz.svg";
 import masterProtection from "@/assets/img/partners/master-protection.svg";
 
-// Array van partners
+// partners
 const partners = [
   allinq, kpn, paul, postnl, ceva, vandeende,
   drake, elslogistics, flextrans, groven, paragon, svz, masterProtection
@@ -36,11 +35,10 @@ const row2 = partners.filter((_, i) => i % 2 !== 0);
       <div class="h-1 w-20 bg-gradient-to-r from-middendorp_green to-middendorp_darkgreen mb-8 sm:mb-16"></div>
     </div>
 
-    <!-- De rijen lopen over de volle schermbreedte door, tot onder de groene
-         baan rechts. -->
+    <!-- De rijen lopen over de volle schermbreedte door, tot onder de groene baan rechts. -->
     <div class="py-6 overflow-hidden space-y-8 sm:space-y-12">
 
-      <!-- Eerste scroll-rij -->
+      <!-- Eerste rij -->
       <div class="scroll-track">
         <div class="scroll-content">
           <div v-for="(partner, index) in row1" :key="'row1a-' + index" class="logo">
@@ -53,24 +51,19 @@ const row2 = partners.filter((_, i) => i % 2 !== 0);
         </div>
       </div>
 
-      <!-- Tweede scroll-rij (tegen richting in) -->
+      <!-- Tweede rij -->
       <div class="scroll-track reverse">
         <div class="scroll-content">
           <div v-for="(partner, index) in row2" :key="'row2a-' + index" class="logo">
             <img :src="partner" alt="partner logo" loading="lazy" decoding="async" class="h-10 sm:h-16 w-auto object-contain" />
           </div>
-          <!-- Duplicaat voor oneindig scrollen -->
+          <!-- infinite scroll -->
           <div v-for="(partner, index) in row2" :key="'row2b-' + index" class="logo">
             <img :src="partner" alt="partner logo" loading="lazy" decoding="async" class="h-10 sm:h-16 w-auto object-contain" />
           </div>
         </div>
       </div>
-
     </div>
-
-    <!-- Zelfde groene baan als op de rest van de pagina, maar hier bovenop de
-         logo's. Daardoor lijken ze er onder vandaan te komen in plaats van
-         eroverheen te lopen. -->
     <div
         class="absolute inset-y-0 right-0 z-20 w-[var(--band-width)] bg-middendorp_green pointer-events-none"
     ></div>
